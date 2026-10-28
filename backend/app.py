@@ -17,26 +17,27 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
+ 
 # --------------------------------------------------
 # Flask App
 # --------------------------------------------------
-
+ 
 app = Flask(__name__)
-
+ 
 CORS(
     app,
     resources={
         r"/*": {
             "origins": os.getenv(
                 "CORS_ORIGINS",
-                "http://localhost:3000"
+                "http://localhost:3000,http://<ec2_ip>:3000"
             ).split(",")
         }
     },
     methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allow_headers=["Content-Type", "Authorization"],
 )
-
+ 
 metrics = PrometheusMetrics(app)
 
 # --------------------------------------------------

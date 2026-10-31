@@ -1,4 +1,4 @@
-const API_URL="http://localhost:5000"
+const API_URL="http://13.233.107.71:5000"
 
 
 

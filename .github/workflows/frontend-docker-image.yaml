@@ -1,7 +1,8 @@
-name: this for the bulding pushing image dockerhub
+name: this for the bulding pushing image dockerhub frontend
 
 on: 
     workflow_dispatch:
+    
 jobs:
   publish_images:
     runs-on: ubuntu-22.04
